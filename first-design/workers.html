@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workers Management</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">Company Logo</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="workers.html">Workers</a></li>
+          <li><a href="schedule.html">Schedules</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+      <div class="profile">👤</div>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <h2>Manage Workers</h2>
+        <div class="actions">
+          <button>Add New Worker</button>
+          <button>View All Workers</button>
+        </div>
+      </section>
+
+      <section class="workers-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Status</th>
+              <th>Last Login</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>Manager</td>
+              <td>Active</td>
+              <td>2024-10-21</td>
+              <td><button>Edit</button> <button>Delete</button></td>
+            </tr>
+            <tr>
+              <td>Jane Smith</td>
+              <td>Cashier</td>
+              <td>Active</td>
+              <td>2024-10-20</td>
+              <td><button>Edit</button> <button>Delete</button></td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>Privacy Policy | Terms of Service | Contact Info</p>
+    </footer>
+  </body>
+</html>

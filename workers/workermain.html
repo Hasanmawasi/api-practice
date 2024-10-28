@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Portal</title>
+    <link rel="stylesheet" href="worker.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="workerprofile.html">Profile</a>
+            <a href="workermain.html">Main</a>
+            <a href="workerreport.html">Reports</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="daily-log-section">
+            <h2>Daily Log</h2>
+            <form id="dailyLogForm">
+                <label for="arrivalTime">Arrival Time:</label>
+                <input type="time" id="arrivalTime" required>
+
+                <label for="leavingTime">Leaving Time:</label>
+                <input type="time" id="leavingTime" required>
+
+                <button type="submit">Submit Log</button>
+            </form>
+        </section>
+
+        <section class="schedule">
+            <h2>Your Schedule</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>09:00 AM</td>
+                        <td>05:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>09:00 AM</td>
+                        <td>05:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>09:00 AM</td>
+                        <td>05:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>09:00 AM</td>
+                        <td>05:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>09:00 AM</td>
+                        <td>05:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>Off</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>Off</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="announcements">
+            <h2>Announcements</h2>
+            <p>Meeting scheduled for 2024-10-25 at 10 AM in the main hall.</p>
+        </section>
+
+        <section class="performance-metrics">
+            <h2>Your Performance</h2>
+            <p>Attendance: 95%</p>
+            <p>Tasks Completed: 20/25</p>
+        </section>
+
+        <section class="leave-request">
+            <h2>Request Leave</h2>
+            <button onclick="location.href='leave.html'">Request Leave</button>
+        </section>
+
+        <section class="feedback-section">
+            <h2>Feedback/Suggestions</h2>
+            <form id="feedbackForm">
+                <textarea placeholder="Your feedback..." required></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Worker Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

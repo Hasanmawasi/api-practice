@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center; /* Centering text */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space out the links */
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+}
+
+.nav-links {
+    display: flex;
+    width: 100%;
+    justify-content: center; /* Center the main link */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 6px 15px; /* Space between links */
+    font-size: 1.2rem;
+}
+
+.nav-links a:nth-child(1) { /* Profile link */
+    margin-right: auto; /* Pushes it to the left */
+}
+
+.nav-links a:nth-child(3) { /* Reports link */
+    margin-left: auto; /* Pushes it to the right */
+}
+
+
+
+.daily-log-section,
+.profile-section,
+.report-section {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="time"],
+textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    text-align: center; /* Centering input text */
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+}/* Profile Card Styles */
+
+.profile-section {
+    padding: 20px;
+}
+
+.profile-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text to the left */
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%; /* Set width for better alignment */
+}
+
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Circular photo */
+    display: block;
+    margin: 0 auto 20px; /* Center the photo */
+}
+
+.profile-details {
+    margin-top: 20px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between; /* Space between text and button */
+    align-items: center; /* Center vertically */
+    margin-bottom: 15px;
+}
+
+.edit-button {
+    padding: 5px 10px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    background-color: white;
+    color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.edit-button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* ============ */
+/* Additional section styles */
+
+.upcoming-tasks,
+.announcements,
+.performance-metrics,
+.leave-request,
+.feedback-section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.upcoming-tasks ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.upcoming-tasks li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.upcoming-tasks li:last-child {
+    border-bottom: none;
+}
+
+.feedback-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.leave-request {
+    text-align: center;
+}
+
+.leave-request button {
+    margin-top: 10px;
+}
+/* =================== */
+.schedule {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.schedule table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule th,
+.schedule td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ced4da;
+}
+
+.schedule th {
+    background-color: #f8f9fa;
+}
+
+/* ================= products */
+.view-products-section {
+    margin-top: 20px;
+}
+
+.products-list {
+    display: flex;
+    flex-wrap: wrap; /* Wrap products to the next line */
+    justify-content: center; /* Center products */
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    text-align: center; /* Center the text */
+    width: 200px; /* Set a fixed width for the cards */
+}
+
+.product-image {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.product-info h3 {
+    margin: 10px 0 5px; /* Margin for product name */
+}
+
+.product-info p {
+    margin: 5px 0; /* Margin for price and quantity */
+}
+

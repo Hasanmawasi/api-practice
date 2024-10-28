@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Log</title>
+    <link rel="stylesheet" href="worker.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="profile-icon">
+            <a href="workerprofile.html">👤</a>
+        </div>
+        <div class="nav-title">
+            <h1>Worker Portal</h1>
+        </div>
+        <div class="log-button">
+            <a href="workerlog.html">Daily Log</a>
+        </div>
+        <div class="report-button">
+            <a href="workerreport.html">Send Report</a>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="log-section">
+            <h2>Submit Your Daily Log</h2>
+            <form id="logForm">
+                <label for="arrivalTime">Arrival Time:</label>
+                <input type="time" id="arrivalTime" required>
+
+                <label for="leavingTime">Leaving Time:</label>
+                <input type="time" id="leavingTime" required>
+
+                <button type="submit">Submit Log</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Worker Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

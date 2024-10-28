@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Company Logo</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="workers.html">Workers</a></li>
+                <li><a href="schedule.html">Schedules</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="setting.html">Settings</a></li>
+            </ul>
+        </nav>
+        <div class="profile">👤</div>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <h2>Reports Overview</h2>
+            <p>This page allows you to generate and view reports on workers' performance, attendance, and scheduling.</p>
+        </section>
+
+        <section class="report-actions">
+            <h3>Generate Reports</h3>
+            <button id="generateAttendanceReport">Generate Attendance Report</button>
+            <button id="generatePerformanceReport">Generate Performance Report</button>
+        </section>
+
+        <section class="chart-container">
+            <h3>Attendance Overview</h3>
+            <canvas id="attendanceChart"></canvas>
+        </section>
+
+        <section class="chart-container">
+            <h3>Average Performance Overview</h3>
+            <canvas id="averagePerformanceChart"></canvas>
+        </section>
+
+        <section class="report-table">
+            <h3>Recent Reports</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Report Type</th>
+                        <th>Date Generated</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Attendance Report</td>
+                        <td>2024-10-20</td>
+                        <td>Completed</td>
+                        <td><button>Download</button></td>
+                    </tr>
+                    <tr>
+                        <td>Performance Report</td>
+                        <td>2024-10-19</td>
+                        <td>Completed</td>
+                        <td><button>Download</button></td>
+                    </tr>
+                    <tr>
+                        <td>Schedule Report</td>
+                        <td>2024-10-18</td>
+                        <td>Pending</td>
+                        <td><button>Download</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Privacy Policy | Terms of Service | Contact Info</p>
+    </footer>
+
+    <script>
+        // Attendance Chart (previous code)
+        const ctxAttendance = document.getElementById('attendanceChart').getContext('2d');
+        const attendanceChart = new Chart(ctxAttendance, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Attendance',
+                    data: [80, 90, 70, 85],
+                    fill: false,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Average Performance Doughnut Chart
+        const totalTasksCompleted = 30 + 25 + 28 + 32; // Example data
+        const totalWorkers = 4;
+        const averagePerformance = (totalTasksCompleted / (totalWorkers * 40)) * 100; // Assuming 40 max tasks
+
+        const averagePerformanceData = {
+            labels: ["Average Performance", "Remaining"],
+            datasets: [{
+                data: [averagePerformance, 100 - averagePerformance],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        const ctxAveragePerformance = document.getElementById('averagePerformanceChart').getContext('2d');
+        const averagePerformanceChart = new Chart(ctxAveragePerformance, {
+            type: 'doughnut',
+            data: averagePerformanceData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Average Performance'
+                    }
+                }
+            }
+        });
+
+        // Display percentage inside the doughnut chart
+        averagePerformanceChart.canvas.parentNode.style.position = 'relative';
+        const percentageText = `${averagePerformance.toFixed(2)}%`;
+        
+        const drawPercentage = () => {
+            const ctx = ctxAveragePerformance;
+            ctx.save();
+            ctx.font = 'bold 24px Arial';
+            ctx.fillStyle = '#000'; // Text color
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(percentageText, averagePerformanceChart.width / 2, averagePerformanceChart.height / 2);
+            ctx.restore();
+        };
+
+        // Draw the percentage after the chart is rendered
+        averagePerformanceChart.options.animation.onComplete = drawPercentage;
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="worker.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="profile.html">Profile</a>
+            <a href="index.html">Main</a>
+            <a href="report.html">Reports</a>
+            <a href="products.html">Products</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="add-product-section">
+            <h2>Add New Product</h2>
+            <form id="addProductForm">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" required>
+
+                <label for="productPhoto">Product Photo URL:</label>
+                <input type="text" id="productPhoto" required>
+
+                <label for="productPrice">Product Price:</label>
+                <input type="number" id="productPrice" required>
+
+                <button type="submit">Add Product</button>
+            </form>
+        </section>
+
+        <section class="view-products-section">
+            <h2>Products List</h2>
+            <div id="productsList" class="products-list">
+                <div class="product-card">
+                    <img src="sample-product.jpg" alt="Sample Product" class="product-image">
+                    <div class="product-info">
+                        <h3>Sample Product</h3>
+                        <p>Price: $10.00</p>
+                        <p>Quantity: 5</p>
+                    </div>
+                </div>
+                <!-- More products will be added here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Worker Portal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle form submission and product addition
+        document.getElementById('addProductForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('productName').value;
+            const photo = document.getElementById('productPhoto').value;
+            const price = document.getElementById('productPrice').value;
+
+            const productsList = document.getElementById('productsList');
+            const newCard = document.createElement('div');
+            newCard.className = 'product-card';
+            newCard.innerHTML = `
+                <img src="${photo}" alt="${name}" class="product-image">
+                <div class="product-info">
+                    <h3>${name}</h3>
+                    <p>Price: $${parseFloat(price).toFixed(2)}</p>
+                    <p>Quantity: 1</p> <!-- Default quantity -->
+                </div>
+            `;
+
+            productsList.appendChild(newCard);
+
+            // Reset the form
+            document.getElementById('addProductForm').reset();
+        });
+    </script>
+</body>
+</html>

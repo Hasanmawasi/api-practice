@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="admin-data.html">Admin Data</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="ml-models.html">Machine Learning Models</a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Overall Performance Dashboard</h1>
+        
+        <section class="charts">
+            <h2>Monthly Sales Overview</h2>
+            <canvas id="salesChart"></canvas>
+        </section>
+
+        <section class="performance-review">
+            <h2>Performance Review</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Supermarket</th>
+                        <th>Predicted Profit</th>
+                        <th>Actual Profit</th>
+                        <th>Deviation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Supermarket A</td>
+                        <td>$10,000</td>
+                        <td>$9,500</td>
+                        <td>-$500</td>
+                    </tr>
+                    <tr>
+                        <td>Supermarket B</td>
+                        <td>$12,000</td>
+                        <td>$12,500</td>
+                        <td>+$500</td>
+                    </tr>
+                    <!-- More data can be added -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Supermarket Management. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [12000, 15000, 13000, 16000, 14000, 17000],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

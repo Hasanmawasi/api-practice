@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Data</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="admin-data.html">Admin Data</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="ml-models.html">Machine Learning Models</a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Admin Data Submission</h1>
+        <form id="adminDataForm">
+            <label for="supermarketName">Supermarket Name:</label>
+            <input type="text" id="supermarketName" required>
+
+            <label for="monthlySales">Monthly Sales:</label>
+            <input type="number" id="monthlySales" required>
+
+            <label for="customerFeedback">Customer Feedback:</label>
+            <textarea id="customerFeedback" required></textarea>
+
+            <button type="submit">Submit Data</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Supermarket Management. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('adminDataForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Data submitted successfully!');
+            // Add functionality to send data to the server
+        });
+    </script>
+</body>
+</html>

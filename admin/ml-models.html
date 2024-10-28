@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Models</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="admin-data.html">Admin Data</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="ml-models.html">Machine Learning Models</a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Machine Learning Models</h1>
+
+        <section class="ml-model">
+            <h2>Model 1: Profit Prediction</h2>
+            <p>This model predicts future profits based on historical data.</p>
+            <div class="model-results">
+                <canvas id="profitPredictionChart" width="400" height="200"></canvas>
+            </div>
+        </section>
+
+        <section class="ml-model">
+            <h2>Model 2: Customer Behavior Analysis</h2>
+            <p>This model analyzes customer behavior for product recommendations.</p>
+            <div class="model-results">
+                <canvas id="customerBehaviorChart" width="400" height="200"></canvas>
+            </div>
+        </section>
+
+        <section class="ml-model">
+            <h2>Model 3: Performance Review</h2>
+            <p>This model compares predicted vs. actual profits to generate insights.</p>
+            <div class="model-results">
+                <canvas id="performanceReviewChart" width="400" height="200"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Supermarket Management. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Profit Prediction Chart
+        const ctx1 = document.getElementById('profitPredictionChart').getContext('2d');
+        const profitPredictionChart = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                datasets: [{
+                    label: 'Predicted Profits',
+                    data: [15000, 20000, 18000, 22000],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Customer Behavior Analysis Chart
+        const ctx2 = document.getElementById('customerBehaviorChart').getContext('2d');
+        const customerBehaviorChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['Product A', 'Product B', 'Product C', 'Product D'],
+                datasets: [{
+                    label: 'Customer Interest',
+                    data: [12, 19, 3, 5],
+                    fill: false,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Performance Review Chart
+        const ctx3 = document.getElementById('performanceReviewChart').getContext('2d');
+        const performanceReviewChart = new Chart(ctx3, {
+            type: 'pie',
+            data: {
+                labels: ['Predicted', 'Actual'],
+                datasets: [{
+                    label: 'Performance Review',
+                    data: [20000, 19000],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+            }
+        });
+    </script>
+</body>
+</html>

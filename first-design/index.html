@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Worker Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">Company Logo</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="workers.html">Workers</a></li>
+          <li><a href="schedule.html">Schedules</a></li>
+          <li><a href="reports.html">Reports</a></li>
+          <li><a href="setting.html">Settings</a></li>
+        </ul>
+      </nav>
+      <div class="profile">👤</div>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <h2>Welcome back, Admin!</h2>
+        <div class="metrics">
+          <div class="metric">Total Workers: <strong>50</strong></div>
+          <div class="metric">Active Workers: <strong>45</strong></div>
+          <div class="metric">Inactive Workers: <strong>5</strong></div>
+          <div class="metric">Recent Hires: <strong>3</strong></div>
+        </div>
+      </section>
+
+      <section class="chart-container">
+        <h3>Workers Overview</h3>
+        <canvas id="workersChart"></canvas>
+      </section>
+
+      <section class="actions">
+        <button>Add New Worker</button>
+        <button>View All Workers</button>
+        <button>Generate Report</button>
+      </section>
+
+      <section class="workers-table">
+        <h3>Recent Workers</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Status</th>
+              <th>Last Login</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>Manager</td>
+              <td>Active</td>
+              <td>2024-10-21</td>
+              <td><button>Edit</button> <button>Delete</button></td>
+            </tr>
+            <tr>
+              <td>Jane Smith</td>
+              <td>Cashier</td>
+              <td>Active</td>
+              <td>2024-10-20</td>
+              <td><button>Edit</button> <button>Delete</button></td>
+            </tr>
+            <tr>
+              <td>Emily Johnson</td>
+              <td>Cashier</td>
+              <td>Inactive</td>
+              <td>2024-09-15</td>
+              <td><button>Edit</button> <button>Delete</button></td>
+            </tr>
+            <tr>
+              <td>Michael Brown</td>
+              <td>Manager</td>
+              <td>Active</td>
+              <td>2024-10-19</td>
+              <td><button>Edit</button> <button>Delete</button></td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>Privacy Policy | Terms of Service | Contact Info</p>
+    </footer>
+
+    <script>
+      const ctx = document.getElementById("workersChart").getContext("2d");
+      const workersChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Active Workers", "Inactive Workers"],
+          datasets: [
+            {
+              label: "# of Workers",
+              data: [45, 5], // Change these values as necessary
+              backgroundColor: [
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(255, 99, 132, 0.2)",
+              ],
+              borderColor: ["rgba(75, 192, 192, 1)", "rgba(255, 99, 132, 1)"],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
